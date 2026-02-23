@@ -1,4 +1,4 @@
-// Little Berry Systems - minimal JS (navigation, CTA prefill, year)
+// Global Technowledge - minimal JS (navigation, CTA prefill, year)
 
 (function () {
   // Footer year
