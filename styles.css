@@ -415,15 +415,45 @@ button.ready:hover {
 
 .contact-parallax {
   position: relative;
+  overflow: hidden;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.contact-parallax::after {
+  content: "";
+  position: absolute;
+  inset: -40px 0; /* give room for movement */
   background-image: url("./images/bottom-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* ✅ parallax feel on desktop */
-  /* This makes the image feel intentional behind the section */
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+
+  transform: translateY(var(--parallaxOffset, 0px));
+  will-change: transform;
+  z-index: 0;
 }
+
+
+/* Overlay for readability */
+.contact-parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 8, 20, 0.55),
+    rgba(5, 8, 20, 0.75)
+  );
+  z-index: 1;
+}
+
+/* Content above */
+.contact-parallax .container {
+  position: relative;
+  z-index: 2;
+}
+
 
 @media (max-width: 768px) {
   .contact-parallax {

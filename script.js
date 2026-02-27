@@ -94,3 +94,30 @@ if (parallaxSection) {
     parallaxSection.style.backgroundPositionY = `${offset * 0.4}px`;
   });
 }
+// =========================
+// Parallax effect for inquiry section background (robust)
+// =========================
+(function () {
+  const section = document.querySelector(".contact-parallax");
+  if (!section) return;
+
+  function onScroll() {
+    const rect = section.getBoundingClientRect();
+    const windowH = window.innerHeight;
+
+    // Only animate when section is near viewport
+    if (rect.bottom < 0 || rect.top > windowH) return;
+
+    // progress: 0 (top enters) -> 1 (bottom leaves)
+    const progress = (windowH - rect.top) / (windowH + rect.height);
+    const offset = (progress - 0.5) * 40; // tweak: -20px..+20px
+
+    section.style.setProperty("--parallaxOffset", `${offset}px`);
+  }
+
+  // Apply the offset to the background layer via CSS variable
+  section.style.setProperty("--parallaxOffset", "0px");
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
