@@ -329,3 +329,8 @@ button { margin-top: 1rem; width: 100%; }
   color: var(--muted);
 }
 
+/* Force-hide honeypot spam trap field */
+.honeypot {
+  display: none !important;
+}
+
