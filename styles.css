@@ -415,7 +415,6 @@ button.ready:hover {
 
 .bottom-image {
   background-attachment: fixed;
-}
   position: relative;
   min-height: 45vh;
   background-image: url("images/bottom-bg.jpg"); /* <-- your image */
