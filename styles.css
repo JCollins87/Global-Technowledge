@@ -355,3 +355,19 @@ button.ready:hover {
   box-shadow: 0 0 22px rgba(110,231,255,0.45);
   transform: translateY(-1px);
 }
+
+#submitBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(40%);
+}
+
+#submitBtn.ready {
+  opacity: 1;
+  filter: none;
+}
+
+#submitBtn.ready:hover {
+  box-shadow: 0 0 22px rgba(110,231,255,0.45);
+  transform: translateY(-1px);
+}

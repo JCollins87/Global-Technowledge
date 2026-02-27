@@ -33,48 +33,53 @@
   });
 })();
 // =========================
-// Enable submit only when form is complete
+// Enable submit only when required fields are complete + consent checked
+// (robust: works with defer, without relying on DOMContentLoaded)
 // =========================
-
-document.addEventListener("DOMContentLoaded", () => {
+(function enableSubmitWhenComplete() {
   const form = document.getElementById("contactForm");
-  if (!form) return;
-
   const submitBtn = document.getElementById("submitBtn");
-  const requiredFields = form.querySelectorAll(
-    "input[required], select[required], textarea[required]"
-  );
+
+  if (!form || !submitBtn) return;
+
   const consent = document.getElementById("consent");
 
-  function checkFormCompletion() {
-    let allFilled = true;
-
-    requiredFields.forEach(field => {
-      if (field.type === "checkbox") return;
-      if (!field.value || field.value.trim() === "") {
-        allFilled = false;
-      }
-    });
-
-    if (!consent || !consent.checked) {
-      allFilled = false;
-    }
-
-    if (allFilled) {
-      submitBtn.disabled = false;
-      submitBtn.classList.add("ready");
-    } else {
-      submitBtn.disabled = true;
-      submitBtn.classList.remove("ready");
-    }
-  }
-
-  requiredFields.forEach(field => {
-    field.addEventListener("input", checkFormCompletion);
-    field.addEventListener("change", checkFormCompletion);
+  // Only count required fields that are actually visible + not honeypots
+  const requiredFields = Array.from(
+    form.querySelectorAll("input[required], select[required], textarea[required]")
+  ).filter(el => {
+    if (el.classList.contains("honeypot")) return false;
+    if (el.type === "hidden") return false;
+    // ignore required checkboxes other than consent (if any)
+    return true;
   });
 
-  if (consent) {
-    consent.addEventListener("change", checkFormCompletion);
+  function isFilled(el) {
+    if (el.type === "checkbox") return el.checked;
+    return String(el.value || "").trim().length > 0;
   }
-});
+
+  function check() {
+    const allRequiredFilled = requiredFields.every(isFilled);
+    const consentOk = consent ? consent.checked : true;
+
+    const ready = allRequiredFilled && consentOk;
+
+    submitBtn.disabled = !ready;
+    submitBtn.classList.toggle("ready", ready);
+  }
+
+  // Run once on load
+  check();
+
+  // Watch changes
+  requiredFields.forEach(el => {
+    el.addEventListener("input", check);
+    el.addEventListener("change", check);
+    el.addEventListener("blur", check);
+  });
+
+  if (consent) consent.addEventListener("change", check);
+})();
+console.log("Enable-submit script loaded");
+
