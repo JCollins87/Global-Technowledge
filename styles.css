@@ -439,3 +439,37 @@ button.ready:hover {
 }
 /* =========================
    Contact
+/* =========================
+   Inquiry section background image
+   ========================= */
+
+.contact-parallax {
+  position: relative;
+  background-image: url("./images/bottom-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* This makes the image feel intentional behind the section */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Overlay so text/cards remain readable */
+.contact-parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 8, 20, 0.55),
+    rgba(5, 8, 20, 0.75)
+  );
+  z-index: 0;
+}
+
+/* Ensure section content is above overlay */
+.contact-parallax .container {
+  position: relative;
+  z-index: 1;
+}
