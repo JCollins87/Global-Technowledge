@@ -83,3 +83,14 @@
 })();
 console.log("Enable-submit script loaded");
 
+// =========================
+// Smooth parallax scroll (optional enhancement)
+// =========================
+const parallaxSection = document.querySelector(".parallax");
+
+if (parallaxSection) {
+  window.addEventListener("scroll", () => {
+    const offset = window.pageYOffset;
+    parallaxSection.style.backgroundPositionY = `${offset * 0.4}px`;
+  });
+}

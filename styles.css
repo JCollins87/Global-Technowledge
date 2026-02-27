@@ -371,3 +371,40 @@ button.ready:hover {
   box-shadow: 0 0 22px rgba(110,231,255,0.45);
   transform: translateY(-1px);
 }
+
+/* =========================
+   Parallax background
+   ========================= */
+
+.parallax {
+  position: relative;
+  background-image: url("images/hero-bg.jpg"); /* <-- your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Dark overlay so text stays readable */
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 8, 20, 0.75),
+    rgba(5, 8, 20, 0.85)
+  );
+  z-index: 0;
+}
+
+/* Ensure content sits above overlay */
+.parallax > .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
