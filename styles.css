@@ -419,11 +419,18 @@ button.ready:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  background-attachment: fixed; /* ✅ parallax feel on desktop */
   /* This makes the image feel intentional behind the section */
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+
+@media (max-width: 768px) {
+  .contact-parallax {
+    background-attachment: scroll;
+  }
+}
+
 
 /* Overlay so text/cards remain readable */
 .contact-parallax::before {
@@ -443,3 +450,4 @@ button.ready:hover {
   position: relative;
   z-index: 1;
 }
+
