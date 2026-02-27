@@ -292,4 +292,40 @@ button { margin-top: 1rem; width: 100%; }
 .nav {
   flex-wrap: nowrap;
 }
+/* =========================
+   How it works – inline numbering
+   ========================= */
+
+.how-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.how-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.how-num {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: rgba(110, 231, 255, 0.9);
+  letter-spacing: 0.08em;
+}
+
+.how-num::after {
+  content: ".";
+  margin-left: 0.1rem;
+}
+
+.how-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.how-card p {
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
 

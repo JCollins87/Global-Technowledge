@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>GlobalTechNowledge | Managed IT, Urgent Support & Cybersecurity | MD • DC • VA</title>
-  <meta name="description" content="GlobalTechNowledge helps small businesses across Maryland, Washington DC, and Virginia with monthly managed IT, urgent one-time support, and security & compliance consulting. Clear communication, fast response, and predictable options." />
+  <meta name="description"
+    content="GlobalTechNowledge helps small businesses across Maryland, Washington DC, and Virginia with monthly managed IT, urgent one-time support, and security & compliance consulting. Clear communication, fast response, and predictable options." />
 
   <!-- OpenGraph -->
   <meta property="og:title" content="GlobalTechNowledge | IT Support for Small Business (MD • DC • VA)" />
-  <meta property="og:description" content="Monthly managed IT, urgent support, and security & compliance consulting. Clear communication, fast response, and predictable options." />
+  <meta property="og:description"
+    content="Monthly managed IT, urgent support, and security & compliance consulting. Clear communication, fast response, and predictable options." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://globaltechnowledge.com/" />
 
@@ -74,8 +77,10 @@
           <p class="eyebrow">Managed IT • Fast Help • Security & Compliance</p>
           <h1>IT that stays out of your way—while keeping your business protected.</h1>
           <p class="subhead">
-            GlobalTechNowledge supports small businesses across <strong>Maryland</strong>, <strong>Washington DC</strong>, and
-            <strong>Virginia</strong>. Choose ongoing monthly IT, urgent one-time help, or security & compliance consulting.
+            GlobalTechNowledge supports small businesses across <strong>Maryland</strong>, <strong>Washington
+              DC</strong>, and
+            <strong>Virginia</strong>. Choose ongoing monthly IT, urgent one-time help, or security & compliance
+            consulting.
             We handle the tech in plain language with clear next steps.
           </p>
 
@@ -155,7 +160,8 @@
         <div class="section-head">
           <h2>Services designed for business owners</h2>
           <p class="muted">
-            Clear options, fast help, and technology that supports your business goals—without turning you into the IT department.
+            Clear options, fast help, and technology that supports your business goals—without turning you into the IT
+            department.
           </p>
         </div>
 
@@ -318,7 +324,8 @@
           <div class="about-note">
             <div class="note-title">Professional best practices</div>
             <p class="muted">
-              Work is guided by industry best practices in networking and cybersecurity, supported by certifications including
+              Work is guided by industry best practices in networking and cybersecurity, supported by certifications
+              including
               <strong>CCNP</strong> and <strong>CISSP</strong>.
             </p>
           </div>
@@ -362,22 +369,26 @@
         <div class="faq-grid">
           <details class="faq">
             <summary>Do you offer monthly plans and one-time support?</summary>
-            <p class="muted">Yes. We offer monthly managed IT for ongoing support, and one-time/emergency help when something breaks.</p>
+            <p class="muted">Yes. We offer monthly managed IT for ongoing support, and one-time/emergency help when
+              something breaks.</p>
           </details>
 
           <details class="faq">
             <summary>Can you help with security and compliance requirements?</summary>
-            <p class="muted">Yes. We can assess risk, improve protections, and help you meet requirements from clients, insurers, or audits.</p>
+            <p class="muted">Yes. We can assess risk, improve protections, and help you meet requirements from clients,
+              insurers, or audits.</p>
           </details>
 
           <details class="faq">
             <summary>Do you work onsite or remote?</summary>
-            <p class="muted">Both. We serve MD, DC, and VA with onsite support and can also assist remotely as needed.</p>
+            <p class="muted">Both. We serve MD, DC, and VA with onsite support and can also assist remotely as needed.
+            </p>
           </details>
 
           <details class="faq">
             <summary>How fast can you respond?</summary>
-            <p class="muted">We offer same-day response options depending on availability and urgency. Tell us “how soon” in the inquiry form.</p>
+            <p class="muted">We offer same-day response options depending on availability and urgency. Tell us “how
+              soon” in the inquiry form.</p>
           </details>
         </div>
       </div>
@@ -420,23 +431,25 @@
             <h3 class="card-title">Inquiry form</h3>
 
             <!-- Formspree: replace action with your endpoint -->
-            <form id="contactForm" class="form" method="POST" action="https://formspree.io/f/REPLACE_ME">
+            <form id="contactForm" class="form" method="POST" action="https://formspree.io/f/REPLACE_ME" novalidate>
               <input type="hidden" name="_subject" value="New Business Inquiry - GlobalTechNowledge" />
               <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <input type="hidden" name="_replyto" id="replyTo" value="" />
 
-              <div class="field">
-                <label for="name">Full name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-                <p class="error" id="errName" aria-live="polite"></p>
-              </div>
+              <div class="two-col">
+                <div class="field">
+                  <label for="name">Full name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                  <p class="error" id="errName" aria-live="polite"></p>
+                </div>
 
-              <div class="field">
-                <label for="company">Company</label>
-                <input id="company" name="company" type="text" autocomplete="organization" required />
-                <p class="error" id="errCompany" aria-live="polite"></p>
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input id="company" name="company" type="text" autocomplete="organization" required />
+                  <p class="error" id="errCompany" aria-live="polite"></p>
+                </div>
               </div>
-
+              
               <div class="field">
                 <label for="email">Email</label>
                 <input id="email" name="email" type="email" autocomplete="email" required />
@@ -454,9 +467,9 @@
                   <label for="inquiryType">Inquiry type</label>
                   <select id="inquiryType" name="inquiryType" required>
                     <option value="">Select one…</option>
-                    <option>Monthly Managed IT</option>
-                    <option>One-Time / Emergency</option>
-                    <option>Security & Compliance</option>
+                    <option value="Monthly Managed IT">Monthly Managed IT</option>
+                    <option value="One-Time / Emergency">One-Time / Emergency</option>
+                    <option value="Security & Compliance">Security & Compliance</option>
                   </select>
                   <p class="error" id="errInquiryType" aria-live="polite"></p>
                 </div>
@@ -465,10 +478,10 @@
                   <label for="urgency">How soon?</label>
                   <select id="urgency" name="urgency" required>
                     <option value="">Select one…</option>
-                    <option>Today (urgent)</option>
-                    <option>This week</option>
-                    <option>Within 2–4 weeks</option>
-                    <option>Just researching</option>
+                    <option value="Today (urgent)">Today (urgent)</option>
+                    <option value="This week">This week</option>
+                    <option value="Within 2–4 weeks">Within 2–4 weeks</option>
+                    <option value="Just researching">Just researching</option>
                   </select>
                   <p class="error" id="errUrgency" aria-live="polite"></p>
                 </div>
@@ -479,11 +492,11 @@
                   <label for="size">Company size</label>
                   <select id="size" name="size" required>
                     <option value="">Select one…</option>
-                    <option>1–10</option>
-                    <option>11–25</option>
-                    <option>26–50</option>
-                    <option>51–100</option>
-                    <option>100+</option>
+                    <option value="1–10">1–10</option>
+                    <option value="11–25">11–25</option>
+                    <option value="26–50">26–50</option>
+                    <option value="51–100">51–100</option>
+                    <option value="100+">100+</option>
                   </select>
                   <p class="error" id="errSize" aria-live="polite"></p>
                 </div>
@@ -492,11 +505,11 @@
                   <label for="location">Location</label>
                   <select id="location" name="location" required>
                     <option value="">Select one…</option>
-                    <option>Maryland</option>
-                    <option>Washington DC</option>
-                    <option>Virginia</option>
-                    <option>Multiple locations</option>
-                    <option>Remote only</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Washington DC">Washington DC</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Multiple locations">Multiple locations</option>
+                    <option value="Remote only">Remote only</option>
                   </select>
                   <p class="error" id="errLocation" aria-live="polite"></p>
                 </div>
@@ -507,9 +520,9 @@
                   <label for="contactPref">Preferred contact</label>
                   <select id="contactPref" name="contactPref" required>
                     <option value="">Select one…</option>
-                    <option>Email</option>
-                    <option>Phone</option>
-                    <option>Either</option>
+                    <option value="Email">Email</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Either">Either</option>
                   </select>
                   <p class="error" id="errContactPref" aria-live="polite"></p>
                 </div>
@@ -522,18 +535,13 @@
 
               <div class="field">
                 <label for="message">What do you need help with?</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  required
-                  placeholder="What’s happening, what are you trying to achieve, and what would success look like?"
-                ></textarea>
+                <textarea id="message" name="message" rows="6" required
+                  placeholder="What’s happening, what are you trying to achieve, and what would success look like?"></textarea>
                 <p class="error" id="errMessage" aria-live="polite"></p>
               </div>
 
               <div class="field checkbox">
-                <label>
+                <label for="consent">
                   <input id="consent" name="consent" type="checkbox" required />
                   I consent to being contacted by GlobalTechNowledge about this inquiry.
                 </label>
@@ -574,4 +582,5 @@
 
   <script src="script.js" defer></script>
 </body>
+
 </html>
