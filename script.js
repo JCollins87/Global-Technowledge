@@ -32,3 +32,49 @@
     });
   });
 })();
+// =========================
+// Enable submit only when form is complete
+// =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+
+  const submitBtn = document.getElementById("submitBtn");
+  const requiredFields = form.querySelectorAll(
+    "input[required], select[required], textarea[required]"
+  );
+  const consent = document.getElementById("consent");
+
+  function checkFormCompletion() {
+    let allFilled = true;
+
+    requiredFields.forEach(field => {
+      if (field.type === "checkbox") return;
+      if (!field.value || field.value.trim() === "") {
+        allFilled = false;
+      }
+    });
+
+    if (!consent || !consent.checked) {
+      allFilled = false;
+    }
+
+    if (allFilled) {
+      submitBtn.disabled = false;
+      submitBtn.classList.add("ready");
+    } else {
+      submitBtn.disabled = true;
+      submitBtn.classList.remove("ready");
+    }
+  }
+
+  requiredFields.forEach(field => {
+    field.addEventListener("input", checkFormCompletion);
+    field.addEventListener("change", checkFormCompletion);
+  });
+
+  if (consent) {
+    consent.addEventListener("change", checkFormCompletion);
+  }
+});
