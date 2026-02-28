@@ -378,7 +378,7 @@ button.ready:hover {
 
 .parallax {
   position: relative;
-  background-image: url("images/hero-bg.jpg"); /* <-- your image */
+  background-image: url("images/hero-bg.webp"); /* <-- your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
