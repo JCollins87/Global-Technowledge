@@ -424,7 +424,7 @@ button.ready:hover {
   content: "";
   position: absolute;
   inset: -40px 0; /* give room for movement */
-  background-image: url("./images/bottom-bg.jpg");
+  background-image: url("./images/bottom-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
